@@ -1,0 +1,78 @@
+@import "@/shared/styles/animations";
+
+@mixin gradient-border {
+  background-image: linear-gradient(var(--angle), #E63946, #8c7fc2);
+  background-origin: border-box;
+
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent;
+
+  animation: rotate 3s linear infinite;
+}
+
+.welcome-section {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}
+
+.hello {
+  font-size: 4.5rem;
+  max-width: fit-content;
+
+  @include appear-left-animation(0.75s);
+}
+
+.contact-btn {
+  max-width: fit-content;
+  opacity: 0;
+
+  @include appear-left-animation(0.75s, 0.2s);
+}
+
+.right-container {
+  position: relative;
+  opacity: 0;
+
+  @include appear-right-animation(0.75s, 0.1s);
+}
+
+.face {
+  @include gradient-border;
+  border-radius: 50%;
+
+  &__bg {
+    @include gradient-border;
+
+    position: absolute;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    inset: -5px;
+
+    z-index: -1;
+
+    filter: blur(16px);
+  }
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}

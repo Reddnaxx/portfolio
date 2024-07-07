@@ -1,0 +1,14 @@
+.chip {
+  display: flex;
+  align-items: center;
+
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+
+  font-family: var(--app-ubuntu), sans-serif;
+  font-size: 1.25rem;
+
+  background-color: var(--app-primary);
+  width: fit-content;
+}

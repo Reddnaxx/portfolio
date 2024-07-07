@@ -1,0 +1,60 @@
+@import "../shared/styles/colors";
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url("../../public/bg.png");
+  background-color: var(--app-background);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  color: var(--app-text);
+
+  max-width: 1680px;
+  margin-inline: auto;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 0.2s;
+
+  &:hover {
+    color: var(--app-link_hover);
+  }
+
+  &:active {
+    color: var(--app-link_active);
+  }
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--app-montserrat), sans-serif;
+}
+
+.section-spacer {
+  width: 100%;
+  height: 12rem;
+}

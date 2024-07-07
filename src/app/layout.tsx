@@ -1,8 +1,25 @@
+import React from "react";
+import clsx from "clsx";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Anton, Montserrat, Ubuntu } from "next/font/google";
+import { navigations } from "@/shared/constants/navigation/navigations";
+import Header from "@/shared/ui/header/header";
+import "./globals.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--app-anton",
+});
+const ubuntu = Ubuntu({
+  weight: "500",
+  subsets: ["latin", "cyrillic"],
+  variable: "--app-ubuntu",
+});
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  variable: "--app-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={clsx(montserrat.className, anton.variable, ubuntu.variable)}
+      >
+        <Header navigations={navigations} />
+        {children}
+      </body>
     </html>
   );
 }

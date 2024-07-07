@@ -1,0 +1,16 @@
+@import "@/shared/styles/animations";
+
+.personal-qualities {
+  @include appear-left-animation(0.75s, 0.2s);
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,35 @@
+@import "@/shared/styles/animations";
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  min-height: 100dvh;
+
+  > h2 {
+    font-size: 4rem;
+
+    @include appear-left-animation(0.75s);
+  }
+
+  &__about {
+    font-size: 1.25rem;
+
+    max-width: fit-content;
+    margin-bottom: 3rem;
+
+    @include appear-left-animation(0.75s, 0.1s);
+
+    > span {
+      color: var(--app-primary);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
+  }
+}

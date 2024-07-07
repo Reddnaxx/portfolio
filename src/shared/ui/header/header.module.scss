@@ -1,0 +1,33 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+
+  padding-block: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  animation: appear-top 1s ease forwards 0.1s;
+}
+
+@keyframes appear-top {
+  from {
+    opacity: 0;
+    transform: translateY(-25dvh);
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

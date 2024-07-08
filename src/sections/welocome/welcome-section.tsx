@@ -6,7 +6,7 @@ import styles from "./welcome-section.module.scss";
 function WelcomeSection() {
   return (
     <>
-      <span className="section-spacer" id="welcome-section" />
+      <span id="welcome-section" />
       <section className={styles["welcome-section"]}>
         <div className={styles["left-container"]}>
           <h1 className={styles["hello"]}>

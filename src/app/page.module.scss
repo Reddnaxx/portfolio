@@ -4,5 +4,7 @@
 
   padding-inline: 5rem;
 
-  min-height: 100dvh;
+  > section {
+    min-height: 100dvh;
+  }
 }

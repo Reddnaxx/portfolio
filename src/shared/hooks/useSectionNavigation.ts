@@ -14,15 +14,22 @@ export const useSectionNavigation = () => {
       touchStart = e.touches[0].screenY;
       canScroll = true;
     }
-    function handleScroll(e: WheelEvent | TouchEvent) {
-      e.preventDefault();
-
+    function handleScroll(e: WheelEvent | TouchEvent | KeyboardEvent) {
       let delta = 0;
       if (e instanceof TouchEvent) {
+        e.preventDefault();
         if (!canScroll) return;
         canScroll = false;
         delta = touchStart - e.touches[0].screenY;
+      } else if (e instanceof KeyboardEvent) {
+        if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+          e.preventDefault();
+          if (!canScroll) return;
+          delta = e.key === "ArrowUp" ? -1 : 1;
+          canScroll = false;
+        }
       } else {
+        e.preventDefault();
         delta = e.deltaY;
       }
 
@@ -34,13 +41,22 @@ export const useSectionNavigation = () => {
         setCurrentSection(prev => (prev === 0 ? prev : prev - 1));
       }
     }
+
+    function handleKeyUp() {
+      canScroll = true;
+    }
+
     window.addEventListener("wheel", handleScroll, { passive: false });
+    window.addEventListener("keydown", handleScroll);
+    window.addEventListener("keyup", handleKeyUp);
     window.addEventListener("touchstart", handleTouchStart, { passive: false });
     window.addEventListener("touchmove", handleScroll, { passive: false });
     return () => {
       window.removeEventListener("wheel", handleScroll);
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleScroll);
+      window.removeEventListener("keydown", handleScroll);
+      window.addEventListener("keyup", handleKeyUp);
     };
   });
 

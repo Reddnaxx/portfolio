@@ -11,4 +11,12 @@
 
   background-color: var(--app-primary);
   width: fit-content;
+
+  transition: transform 0.2s ease;
+
+  cursor: default;
+
+  &:hover {
+    transform: translate(-2px, -2px) rotate(2deg);
+  }
 }

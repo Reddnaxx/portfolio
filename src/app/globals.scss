@@ -10,7 +10,7 @@ body {
   background-image: url("../../public/bg.png");
   background-color: var(--app-background);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
 
   color: var(--app-text);
 

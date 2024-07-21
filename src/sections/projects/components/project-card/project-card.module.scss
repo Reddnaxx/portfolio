@@ -1,0 +1,34 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background-color: var(--app-card);
+  backdrop-filter: blur(20px);
+
+  transition-property: transform, box-shadow;
+  transition-duration: 0.2s;
+  cursor: pointer;
+
+  > img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+    > h3 {
+      font-size: 1.25rem;
+      font-family: var(--app-ubuntu), sans-serif;
+      font-weight: 500;
+    }
+  }
+}

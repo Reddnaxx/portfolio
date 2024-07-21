@@ -1,7 +1,73 @@
 .projects-section {
+  position: relative;
+
   flex: 1;
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 25dvw;
+    top: 10dvw;
+    width: 25dvw;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: radial-gradient(#E63946, transparent);
+    filter: blur(300px);
+    z-index: -1;
+
+    animation: anim-1 60s ease infinite;
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    right: 15dvw;
+    top: 25dvh;
+    width: 25dvw;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: radial-gradient(#00c4ff, transparent);
+    filter: blur(300px);
+    z-index: -1;
+    animation: anim-2 60s linear infinite;
+  }
+
+  &__list {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@keyframes anim-1 {
+  0% {
+    left: 25dvw;
+    top: 10dvw;
+  }
+  50% {
+    left: 50dvw;
+    top: 40dvw;
+  }
+  100% {
+    left: 25dvw;
+    top: 10dvw;
+  }
+}
+
+@keyframes anim-2 {
+  0% {
+    right: 15dvw;
+    top: 25dvw;
+  }
+  50% {
+    right: 45dvw;
+    top: 5dvw;
+  }
+  100% {
+    right: 15dvw;
+    top: 25dvw;
+  }
 }

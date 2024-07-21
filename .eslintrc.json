@@ -1,6 +1,7 @@
 {
   "extends": ["eslint:recommended", "next", "plugin:prettier/recommended"],
   "rules": {
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "no-redeclare": "off"
   }
 }

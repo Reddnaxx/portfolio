@@ -1,0 +1,27 @@
+.modal-bg {
+  position: fixed;
+  inset: 0;
+
+  place-content: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+
+  transition-duration: 0.2s;
+}
+
+.modal {
+  margin-inline: auto;
+  max-width: 600px;
+
+  background-color: #202026;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+
+  padding: 1rem;
+
+  > button {
+    padding: 0.5rem;
+    line-height: 0.5rem;
+  }
+}

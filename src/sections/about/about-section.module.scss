@@ -5,12 +5,6 @@
   flex-direction: column;
   gap: 1rem;
 
-  > h2 {
-    font-size: 4rem;
-
-    @include appear-left-animation(0.75s);
-  }
-
   &__about {
     font-size: 1.25rem;
 

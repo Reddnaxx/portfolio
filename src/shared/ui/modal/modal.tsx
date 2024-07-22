@@ -8,16 +8,13 @@ import React, {
 	useRef,
 	useState,
 } from "react";
-import {
-	CSSTransition,
-	Transition,
-	TransitionStatus,
-} from "react-transition-group";
+import { Transition } from "react-transition-group";
 
 import { ModalContext } from "@/app/providers";
 import Button from "@/shared/ui/button/button";
 
 import styles from "./modal.module.scss";
+
 
 const TIMEOUT = 200;
 

@@ -59,9 +59,9 @@
   }
 
   &_icon {
-    padding-inline: var(--app-btn-size);
+    padding: var(--app-btn-size);
+    line-height: var(--app-btn-size);
 
     border-radius: 50%;
-    line-height: calc(var(--app-btn-size) * 1.5);
   }
 }

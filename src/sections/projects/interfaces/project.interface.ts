@@ -5,4 +5,6 @@ export interface IProject {
 	description: string;
 	image: string;
 	stack: ChipData[];
+	github: string;
+	url?: string;
 }

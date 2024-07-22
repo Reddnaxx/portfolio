@@ -10,6 +10,7 @@ const initialProps = {
 	type: "button",
 	size: "medium",
 	variant: "filled",
+	btnType: "button",
 } satisfies ButtonProps;
 
 function Button({
@@ -21,6 +22,8 @@ function Button({
 	variant = initialProps.variant,
 	size = initialProps.size,
 	type = initialProps.type,
+	btnType = initialProps.btnType,
+	href,
 }: ButtonProps) {
 	const cn = clsx(
 		className,
@@ -40,14 +43,27 @@ function Button({
 	);
 
 	return (
-		<button
-			style={style}
-			className={cn}
-			type={type}
-			onClick={onClick}
-		>
-			{children}
-		</button>
+		<>
+			{btnType === "link" ? (
+				<a
+					style={style}
+					className={cn}
+					onClick={onClick}
+					href={href}
+				>
+					{children}
+				</a>
+			) : (
+				<button
+					style={style}
+					className={cn}
+					type={type}
+					onClick={onClick}
+				>
+					{children}
+				</button>
+			)}
+		</>
 	);
 }
 

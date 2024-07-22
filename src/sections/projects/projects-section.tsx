@@ -16,6 +16,8 @@ function ProjectsSection() {
 				description={project.description}
 				image={project.image}
 				stack={project.stack}
+				github={project.github}
+				url={project.url}
 			/>
 		);
 	});

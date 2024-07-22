@@ -1,6 +1,7 @@
 .modal-bg {
   position: fixed;
   inset: 0;
+  z-index: 10000;
 
   place-content: center;
 
@@ -21,7 +22,11 @@
   padding: 1rem;
 
   > button {
-    padding: 0.5rem;
-    line-height: 0.5rem;
+    padding: 0.2rem;
+    line-height: 0.2rem;
+
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
   }
 }

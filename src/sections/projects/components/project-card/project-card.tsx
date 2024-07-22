@@ -4,24 +4,37 @@ import Image from "next/image";
 import React, { useContext, useMemo } from "react";
 
 import { ModalContext } from "@/app/providers";
-import StackList from "@/sections/projects/components/project-card/components/stack-list/stack-list";
 
+import StackList from "./components/stack-list/stack-list";
 import styles from "./project-card.module.scss";
 import { ProjectCardProps } from "./project-card.props";
 
-function ProjectCard({ title, description, image, stack }: ProjectCardProps) {
+function ProjectCard({
+	title,
+	description,
+	github,
+	url,
+	image,
+	stack,
+}: ProjectCardProps) {
 	const { openModal } = useContext(ModalContext);
 
 	const modalContent = useMemo(
 		() => (
-			<>
+			<div className={styles["modal"]}>
 				<h2>{title}</h2>
-				<p>{description}</p>
-				<h3>Stack</h3>
-				<StackList stack={stack} />
-			</>
+				<p className={styles["modal__desc"]}>{description}</p>
+				<p>
+					GitHub: <a href={github}>{github}</a>
+				</p>
+				{url && (
+					<p>
+						URL: <a href={url}>{url}</a>
+					</p>
+				)}
+			</div>
 		),
-		[description, stack, title],
+		[description, github, title, url],
 	);
 
 	return (

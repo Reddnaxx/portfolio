@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
+import ContactButton from "@/sections/welocome/components/contact-button";
 import Button from "@/shared/ui/button/button";
 
 import styles from "./welcome-section.module.scss";
@@ -18,12 +19,10 @@ function WelcomeSection() {
 						<br />
 						Front-end developer
 					</h1>
-					<Button
+					<ContactButton
 						size="large"
 						className={styles["contact-btn"]}
-					>
-						Contact me!
-					</Button>
+					/>
 				</div>
 				<div className={styles["right-container"]}>
 					<Image

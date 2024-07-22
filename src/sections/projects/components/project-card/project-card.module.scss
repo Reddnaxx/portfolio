@@ -32,3 +32,21 @@
     }
   }
 }
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  a {
+    color: var(--app-accent);
+
+    &:hover {
+      color:  var(--app-primary);
+    }
+  }
+
+  &__desc {
+    margin-bottom: 1rem;
+  }
+}

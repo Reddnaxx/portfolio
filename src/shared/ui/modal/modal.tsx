@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, {
+	CSSProperties,
 	useCallback,
 	useContext,
 	useEffect,
@@ -15,14 +16,13 @@ import Button from "@/shared/ui/button/button";
 
 import styles from "./modal.module.scss";
 
-
 const TIMEOUT = 200;
 
 const transitionStyles = {
 	entering: { opacity: 0 },
 	entered: { opacity: 1 },
 	exiting: { opacity: 1 },
-	exited: { opacity: 0, "pointer-events": "none" },
+	exited: { opacity: 0, pointerEvents: "none" },
 };
 
 function Modal() {
@@ -53,35 +53,21 @@ function Modal() {
 	}, [handleClose, visible]);
 
 	return (
-		<Transition
-			nodeRef={modalRef}
-			in={visible}
-			timeout={TIMEOUT}
-		>
+		<Transition nodeRef={modalRef} in={visible} timeout={TIMEOUT}>
 			{status => (
 				<div
 					className={styles["modal-bg"]}
 					ref={modalRef}
 					onClick={handleClose}
 					style={{
-						...transitionStyles[status as keyof typeof transitionStyles],
+						...(transitionStyles[
+							status as keyof typeof transitionStyles
+						] as CSSProperties),
 					}}
 				>
-					<div
-						className={styles["modal"]}
-						onClick={e => e.stopPropagation()}
-					>
-						<Button
-							onlyIcon
-							onClick={handleClose}
-							size={"small"}
-						>
-							<Image
-								src="/svg/close.svg"
-								alt=""
-								width={24}
-								height={24}
-							/>
+					<div className={styles["modal"]} onClick={e => e.stopPropagation()}>
+						<Button onlyIcon onClick={handleClose} size={"small"}>
+							<Image src="/svg/close.svg" alt="" width={24} height={24} />
 						</Button>
 						<div className={styles["modal-content"]}>{modalContent}</div>
 					</div>

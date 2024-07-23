@@ -36,7 +36,8 @@ export const NavigationContext = createContext<INavigationContext>({
 
 function Providers({ children }: { children: ReactNode }) {
 	const [modalContent, setModalContent] = useState<ReactNode>(null);
-	const { currentSection, setCurrentSection } = useSectionNavigation();
+	const { currentSection, setCurrentSection } =
+		useSectionNavigation(!!modalContent);
 
 	const modalCtxValue = useMemo(
 		() => ({

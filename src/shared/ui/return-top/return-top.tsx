@@ -21,12 +21,7 @@ function ReturnTop() {
 			onClick={() => setSection(0)}
 			onlyIcon
 		>
-			<Image
-				src="/svg/arrow-up.svg"
-				alt=""
-				width={24}
-				height={24}
-			/>
+			<Image src="/svg/arrow-up.svg" alt="" width={24} height={24} />
 		</Button>
 	);
 }

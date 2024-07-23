@@ -7,10 +7,7 @@ import TechnicalSkills from "./components/technical-skills/technical-skills";
 function AboutSection() {
 	return (
 		<>
-			<span
-				className="section-spacer"
-				id="about-section"
-			/>
+			<span className="section-spacer" id="about-section" />
 			<section className={styles["about-section"]}>
 				<h2>About me</h2>
 				<p className={styles["about-section__about"]}>

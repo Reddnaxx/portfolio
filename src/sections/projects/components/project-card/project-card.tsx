@@ -25,11 +25,17 @@ function ProjectCard({
 				<h2>{title}</h2>
 				<p className={styles["modal__desc"]}>{description}</p>
 				<p>
-					GitHub: <a href={github}>{github}</a>
+					GitHub:{" "}
+					<a target="_blank" href={github}>
+						{github}
+					</a>
 				</p>
 				{url && (
 					<p>
-						URL: <a href={url}>{url}</a>
+						URL:{" "}
+						<a target="_blank" href={url}>
+							{url}
+						</a>
 					</p>
 				)}
 			</div>
@@ -42,12 +48,7 @@ function ProjectCard({
 			className={styles["project-card"]}
 			onClick={() => openModal(modalContent)}
 		>
-			<Image
-				src={image}
-				alt=""
-				width={480}
-				height={280}
-			/>
+			<Image src={image} alt="" width={480} height={280} />
 			<div className={styles["project-card__bottom"]}>
 				<h3>{title}</h3>
 				<StackList stack={stack} />

@@ -17,14 +17,7 @@ function TechnicalSkills() {
 							<Chip
 								title={skill.title}
 								color={skill.color}
-								icon={
-									<Image
-										src={skill.icon}
-										alt=""
-										width={32}
-										height={32}
-									/>
-								}
+								icon={<Image src={skill.icon} alt="" width={32} height={32} />}
 							/>
 						</li>
 					);

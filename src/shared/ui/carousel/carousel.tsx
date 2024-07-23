@@ -32,10 +32,7 @@ function Carousel({ items }: CarouselProps) {
 			>
 				{items.map((item, index) => {
 					return (
-						<li
-							className={styles["list-item"]}
-							key={index}
-						>
+						<li className={styles["list-item"]} key={index}>
 							{item}
 						</li>
 					);

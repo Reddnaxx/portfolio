@@ -1,15 +1,29 @@
 .list-item {
   transition: 0.2s ease;
+  opacity: 0;
 
   > div {
     margin: 0.5rem;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
   }
+
+  animation: appear 0.5s ease forwards 0.5s;
 }
 
 .carousel-slider {
   &:has(li:hover) .list-item > div:not(:hover) {
     box-shadow: unset;
     transform: translate(4px, 4px);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scaleX(0.97) translateX(-3%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
   }
 }

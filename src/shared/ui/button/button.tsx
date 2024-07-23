@@ -45,21 +45,11 @@ function Button({
 	return (
 		<>
 			{btnType === "link" ? (
-				<a
-					style={style}
-					className={cn}
-					onClick={onClick}
-					href={href}
-				>
+				<a style={style} className={cn} onClick={onClick} href={href}>
 					{children}
 				</a>
 			) : (
-				<button
-					style={style}
-					className={cn}
-					type={type}
-					onClick={onClick}
-				>
+				<button style={style} className={cn} type={type} onClick={onClick}>
 					{children}
 				</button>
 			)}

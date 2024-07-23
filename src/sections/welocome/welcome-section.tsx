@@ -19,10 +19,7 @@ function WelcomeSection() {
 						<br />
 						Front-end developer
 					</h1>
-					<ContactButton
-						size="large"
-						className={styles["contact-btn"]}
-					/>
+					<ContactButton size="large" className={styles["contact-btn"]} />
 				</div>
 				<div className={styles["right-container"]}>
 					<Image

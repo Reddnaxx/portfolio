@@ -1,12 +1,10 @@
 import { useRouter } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { ModalContext } from "@/app/providers";
 import { navigations } from "@/shared/constants/navigation/navigations";
 
 let canScroll = true;
-export const useSectionNavigation = () => {
-	const { modalContent } = useContext(ModalContext);
+export const useSectionNavigation = (isLocked: boolean) => {
 	const [currentSection, setCurrentSection] = useState<number>(0);
 	const router = useRouter();
 
@@ -36,7 +34,7 @@ export const useSectionNavigation = () => {
 				delta = e.deltaY;
 			}
 
-			if (modalContent) return;
+			if (isLocked) return;
 
 			if (delta > 0) {
 				setCurrentSection(prev =>

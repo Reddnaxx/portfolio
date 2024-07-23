@@ -10,10 +10,7 @@ function ContactButton(props: ButtonProps) {
 	const { setSection } = useContext(NavigationContext);
 
 	return (
-		<Button
-			onClick={() => setSection(3)}
-			{...props}
-		>
+		<Button onClick={() => setSection(3)} {...props}>
 			Contact me!
 		</Button>
 	);

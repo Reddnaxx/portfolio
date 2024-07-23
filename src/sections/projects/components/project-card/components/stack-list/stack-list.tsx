@@ -11,21 +11,11 @@ function StackList({ stack }: StackListProps) {
 		<ul className={styles["stack"]}>
 			{stack.map((item, index) => {
 				return (
-					<li
-						key={index}
-						className={styles["stack-item"]}
-					>
+					<li key={index} className={styles["stack-item"]}>
 						<Chip
 							title={item.title}
 							size={"small"}
-							icon={
-								<Image
-									src={item.icon}
-									alt=""
-									width={24}
-									height={24}
-								/>
-							}
+							icon={<Image src={item.icon} alt="" width={24} height={24} />}
 							color={item.color}
 						/>
 					</li>

@@ -5,14 +5,18 @@ export const projects: IProject[] = [
 	{
 		title: "Business volchonok",
 		description:
-			"Website of business school for children with lessons and tests.",
+			"Website of business school for children with lessons and tests.\n" +
+			"My first project as frontend developer.\n" +
+			"While working on this site, I studied JS, TS and React from scratch.",
 		image: "/img/projects/business-volchonok.png",
 		stack: [getSkill("React")],
 		github: "https://github.com/MyLongCode/BusinessWolf",
 	},
 	{
 		title: "Bistro scout",
-		description: "Service for booking tables in restaurants, cafes, etc.",
+		description:
+			"Service for booking tables in restaurants, cafes, etc.\n" +
+			"During development, I was a frontend developer in a team of 5 students",
 		image: "/img/projects/bistro-scout.png",
 		stack: getSkill(["Next.js"]),
 		github: "https://github.com/Reddnaxx/BistroScout",
@@ -21,7 +25,8 @@ export const projects: IProject[] = [
 	{
 		title: "Warpoint merch",
 		description:
-			"Website for hackathon Unit Hack, the essence of the site is the sale of Warpoint's merch",
+			"Website for hackathon Unit Hack, the essence of the site is the sale of Warpoint's merch.\n" +
+			"It was out first hackathon, so backend wasn't ready in time cause of bad deploy, but frontend is almost done",
 		image: "/img/projects/warpoint.png",
 		stack: getSkill(["Next.js", "Material UI"]),
 		github: "https://github.com/Reddnaxx/unit-hack",
@@ -29,7 +34,11 @@ export const projects: IProject[] = [
 	},
 	{
 		title: "Vacation planner",
-		description: "Website for course by Artsofte",
+		description:
+			"Website for angular course by Artsofte.\n" +
+			"We worked in teams of 3 people. My team didn't know much about programming," +
+			" so I was the team leader and gave the guys tips.\n" +
+			"As a result, an excellent grade was obtained.",
 		image: "/img/projects/vacation-planner.png",
 		stack: getSkill(["Angular", "Material UI"]),
 		github: "https://github.com/Reddnaxx/VacationPlanningApp/tree/dev",
